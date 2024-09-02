@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 # Probeta 4: https://raw.githubusercontent.com/Hetskuni/Materiales/main/DatosEnsayoProbeta_4.csv
 
 # Paso 1: Leer y procesar el archivo completo
-df = pd.read_csv('https://raw.githubusercontent.com/Hetskuni/Materiales/main/DatosEnsayoProbeta_2.csv', sep=';')
+df = pd.read_csv('https://raw.githubusercontent.com/Hetskuni/Materiales/main/DatosEnsayoProbeta_1.csv', sep=';')
 df = df.drop(index=df.index[0])
 
 # Convertir a numérico y eliminar filas no numéricas
