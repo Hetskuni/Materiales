@@ -2,7 +2,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 
-# Paso 0: Elegir que base de datos segun el numero de la probeta 0.5 
+# Paso 0: Elegir que base de datos según el número de la probeta 0.5 
 # Probeta 1: https://raw.githubusercontent.com/Hetskuni/Materiales/main/DatosEnsayoProbeta05_1.csv 
 # Probeta 2: https://raw.githubusercontent.com/Hetskuni/Materiales/main/DatosEnsayoProbeta05_2.csv 
 # Probeta 3: https://raw.githubusercontent.com/Hetskuni/Materiales/main/DatosEnsayoProbeta05_3.csv 
@@ -14,10 +14,11 @@ df = pd.read_csv('https://raw.githubusercontent.com/Hetskuni/Materiales/main/Dat
 df['Extensión (mm)'] = df['Extensión (mm)'].str.replace(',', '.').astype(float)
 df['Carga (N)'] = df['Carga (N)'].str.replace(',', '.').astype(float)
 
-# Paso 3: Calcular esfuerzo y deformación (asumiendo área de sección transversal constante y conocida)
-area_seccion = 1.0  # Modificar según el área de la sección transversal de la probeta en mm²
+# Paso 3: Calcular esfuerzo y deformación usando el área de sección transversal correcta
+# Área transversal de la espuma en mm²
+area_seccion = 2.5 * 2.5  # mm²
 
-# Esfuerzo = Carga / Área
+# Esfuerzo = Carga / Área (en MPa)
 df['Esfuerzo (MPa)'] = df['Carga (N)'] / area_seccion / 1e6  # Convertir a MPa
 
 # Deformación = Extensión / Longitud original (suponiendo longitud original conocida)
